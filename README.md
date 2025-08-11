@@ -18,7 +18,7 @@ Tema WordPress desenvolvido com integração ao Advanced Custom Fields (ACF) par
 
 - `/coopers/` — pasta com todo o código do tema customizado
 - `/coopers/acf-export-2025-08-11.json` — arquivo JSON dos campos personalizados
-- 
+
 ## Acesso ao projeto rodando em servidor remoto
 
 > Link: https://rafaelabianek.com.br/rafaela-coopers/
