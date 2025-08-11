@@ -1,0 +1,855 @@
+/*!
+Theme Name: coopers
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: coopers
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+coopers is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+    /* CSS Geral */
+    body {
+      margin: 0px;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+      background: #fff;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    ul,
+    p,
+    blockquote {
+      margin: 0px;
+    }
+
+    ul {
+      padding: 0px;
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-bottom: 0.9rem;
+    }
+
+    h1 {
+      font-size: 2.575rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    :root {
+      --main-color: #4AC959;
+      --text-color: #000;
+      --bg-color: #fff;
+      --gray-color: #979797;
+      --gray-two-color: #9A9A9A;
+      --white-color: #fff;
+      --black-color: #000;
+      --blue-color: #312F4F;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    section.error-404.not-found {
+        max-width: 1240px;
+        justify-self: center;
+        min-height: 50vh;
+    }
+
+    .header-logo {
+      padding: 30px;
+    }
+
+    .button-primary,
+    .button-secondary {
+      padding: 1rem 1.7rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+      transition: 0.3s;
+      border: none;
+      font-weight: 600;
+    }
+
+    .button-primary:hover,
+    .button-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      filter: brightness(1.1);
+    }
+
+    .button-primary {
+      background-color: var(--main-color);
+      color: var(--white-color);
+    }
+
+    .button-secondary {
+      background-color: var(--text-color);
+      color: var(--white-color);
+    }
+
+    .card-shadow {
+      background: var(--white-color);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 2rem;
+      max-width: 20rem;
+    }
+
+    /* Seção principal*/
+    .hero-section .container {
+      display: flex;
+      text-align: center;
+      padding: 2.2rem 1.5rem;
+      gap: 1.25rem;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 38rem;
+      right: 0;
+      width: 100%;
+      height: 20rem;
+      z-index: -1;
+      background: url(https://rafaelabianek.com.br/rafaela-coopers/wp-content/uploads/2025/08/BG.png);
+      background-position: right center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translateY(-50%);
+    }
+
+    .hero__description {
+      font-size: 1.313rem;
+      margin: 1rem 0 4rem;
+    }
+
+    #hero__title {
+      max-width: 24rem;
+    }
+
+    img.hero-img {
+      width: 70%;
+    }
+
+    .green-detail {
+      color: var(--main-color);
+      font-weight: 400;
+    }
+
+    /* Seção de preços */
+    .pricing__title-div {
+      background-color: black;
+      transform: skewY(-4deg);
+      padding: 4rem 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      z-index: -2;
+      position: relative;
+      justify-items: center;
+    }
+
+    #pricing__title,
+    .pricing__text {
+      transform: skewY(4deg);
+      color: var(--white-color);
+    }
+    
+    #pricing__title {
+      position: relative; 
+      display: inline-block; 
+    }
+    
+    #pricing__title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px; 
+      width: 100%;
+      height: 4px; 
+      background-color: #3FAE41;
+      border-radius: 2px;
+    }
+    
+    .pricing__plan-option {
+      display: flex;
+      justify-content: center;
+      margin: 4rem 0;
+    }
+
+    .pricing__plan-div {
+      border-top: 1.2rem solid var(--main-color);
+      text-align: center;
+    }
+
+    .plan-features li {
+      text-align: left;
+      padding: 0.6rem;
+    }
+
+    .plan-price {
+      font-weight: 700;
+      font-size: 2.3rem;
+    }
+
+    .plan-price__title {
+      padding: 1rem 0;
+    }
+
+    .plan-price__title h3 {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .plan-price__title p {
+      font-size: 1.5rem;
+    }
+
+    .pricing__title-div {
+      position: relative;
+      padding-top: 80px;
+      text-align: center;
+    }
+
+    .pricing__title-div::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        background-image: url(https://rafaelabianek.com.br/rafaela-coopers/wp-content/uploads/2025/08/icon-scroll-1.png);
+        width: 25px;
+        height: 42px;
+        transform: skewY(4deg);
+    }
+
+    .plan-features li:last-child {
+      margin-bottom: 2rem;
+    }
+
+    .pricing-section {
+      background-image: url(https://rafaelabianek.com.br/rafaela-coopers/wp-content/uploads/2025/08/grafismos-lateral-esquerda.png);
+      background-position: left bottom;
+      background-repeat: no-repeat;
+    }
+
+    .fa-circle-check {
+      color: var(--main-color);
+    }
+
+    .fa-circle-xmark {
+      color: #FF4607;
+    }
+    
+    .pricing__plan-option a {
+        text-transform: lowercase;
+        padding: 0.9rem 3rem;
+    }
+    
+    /* Seção de blog */
+    #blog-heading {
+        color: var(--white-color);
+        padding: 0 3rem;
+    }
+    
+    .blog-section {
+      position: relative;
+      padding: 3rem 0;
+    }
+    
+    .blog-bg {
+      position: relative;
+      background-color: var(--main-color); 
+      border-radius: 20px 20px 0 0; 
+      padding-top: 3rem; 
+    }
+    
+    .blog-section .container {
+      position: relative;
+      z-index: 1; /* mantém o conteúdo sobre o fundo */
+    }
+    
+    .blog-slider {
+      position: relative;
+    }
+    
+    .blog-section .container,
+    .blog-section h2,
+    .blog-section .blog-slider {
+      position: relative;
+      z-index: 1; /* conteúdo sobre o fundo */
+    }
+
+    
+    .blog-slider .slide-image::before {
+        content: '';
+        position: absolute;
+        top: 8.6rem;
+        right: 20px;
+        width: 49px;
+        height: 56px;
+        background: url(https://rafaelabianek.com.br/rafaela-coopers/wp-content/uploads/2025/08/blog-detail.png);
+        background-repeat: no-repeat;
+    }
+    
+    .blog-slider h3 {
+        color: var(--blue-color);
+        font-size: 1.125rem;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .read-more {
+        color: var(--main-color);
+        font-weight: 700;
+    }
+
+    /*  Slider */
+    .blog-slider {
+      position: relative;
+      padding: 2rem;
+    }
+    .slide-content {
+        padding: 1.3rem 1.3rem 1rem;
+    }
+
+    .slider-container {
+      display: block;
+      align-items: center;
+    }
+    
+    .slider-wrapper {
+      display: flex;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      padding-bottom: 2rem;
+    }
+    
+    .blog-slider .slide {
+      box-shadow: rgba(50, 50, 93, 0.2) 0px 13px 19px -5px;
+      flex: 0 0 300px;
+      margin: 0 1rem;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .slide img {
+      width: 100%;
+      display: block;
+      border-start-start-radius: 8px;
+      border-start-end-radius: 8px;
+    }
+    
+    .slide-tag {
+      background: #fff;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid #565b78;
+      color: #565b78;
+    }
+    
+    .slider-wrapper {
+      scroll-behavior: smooth; 
+      -webkit-overflow-scrolling: touch; 
+    }
+    
+    /* Setas não clicáveis, apenas com focus*/
+    .slider-prev,
+    .slider-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 3px;
+      opacity: 0;            
+      pointer-events: none;   
+      transition: opacity 0.3s;
+    }
+    
+    .slider-prev:focus,
+    .slider-next:focus {
+      opacity: 1;           
+      pointer-events: auto; 
+      outline: 2px solid #fff;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .dot {
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      background: #C4C4C4;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dot.active {
+        background: var(--gray-color);
+    }
+    
+    .dot:focus {
+      outline: 1px solid var(--black-color);
+    }
+
+    /* Fomulário */
+    .contact-section {
+      padding: 2rem 0;
+      margin: 2rem 1rem;
+    }
+
+    .contact__form {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .contact__form-img {
+      justify-self: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact__form-title {
+      display: flex;
+      text-align: left;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .contact__form-img::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -70px;
+      width: 100%;
+      height: 1.5rem;
+      background-color: var(--main-color);
+      z-index: -1;
+    }
+
+    #contact__title {
+      max-width: 8rem;
+      margin: 1rem;
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .contact__form-title img {
+      width: 90px;
+      height: 60px;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form>div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form label {
+      font-weight: 500;
+      color: #444;
+    }
+
+    .form input,
+    .form textarea {
+      padding: 0.8rem;
+      border: 1px solid #06152B;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .form input:focus, 
+    .form textarea:focus {
+        outline: none;
+        border-color: #4CAF50; 
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); 
+    }
+
+    .form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form .row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .col-2 {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    button.form-button {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .form label[for="email"]::after,
+    .form label[for="telephone"]::after {
+      content: "*";
+      color: #e74c3c;
+      margin-left: 0.2rem;
+    }
+
+    /* Footer */
+    footer {
+      background-image: url(https://rafaelabianek.com.br/rafaela-coopers/wp-content/uploads/2025/08/rodape.png);
+      padding: 4rem 1.2rem 0;
+      color: var(--white-color);
+      text-align: center;
+      justify-items: center;
+      background-size: cover;
+    }
+    
+    .footer-content{ 
+      background-color: var(--black-color);
+    }
+    
+    .footer-decoration {
+      width: 90%;
+      height: 2rem;
+      margin-top: 3rem;
+      background-color: var(--main-color);
+    }
+
+    .footer-content a {
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-style: normal;
+    }
+    
+    .copyright {
+        font-size: 0.875rem;
+        margin-top: 1rem;
+    }
+    
+    h3#footer__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+        
+    @media(min-width: 768px) {
+
+      h1,
+      h2 {
+        font-size: 3rem;
+      }
+
+      .hero-section .container {
+        flex-direction: row;
+        gap: 2.25rem;
+      }
+
+      .hero-section::before {
+        top: 25rem;
+        height: 25rem;
+      }
+
+      img.hero-img {
+        width: 85%;
+      }
+
+      .hero-bg {
+        background-size: 30%;
+      }
+      
+      .blog-slider .slide {
+        flex:0 0 calc(92% / 2); 
+      }
+
+      .pricing__prices-div {
+        display: flex;
+        gap: 5rem;
+        justify-content: center;
+        min-width: 17rem;
+      }
+
+      .pricing-section {
+        margin-top: 4rem;
+      }
+
+      .pricing__text {
+        max-width: 30rem;
+      }
+
+      .form .row {
+        flex-direction: row;
+      }
+
+      .form-button {
+        align-self: center;
+      }
+    }
+
+    @media (min-width: 1024px) {
+
+      h1,
+      h2 {
+        font-size: 4rem;
+      }
+
+      .hero__content {
+        text-align: left;
+        padding: 2rem 2rem 2rem 0;
+        width: 50%;
+      }
+
+      .pricing__text {
+        max-width: 40rem;
+        font-size: 1.5rem;
+        margin-top: 1.3rem;
+      }
+        
+      #hero__title {
+        max-width: 29rem;
+      }
+
+      .hero__image-container {
+        width: 50%;
+      }
+
+      .hero-section::before {
+        height: 38rem;
+        top: 22rem;
+      }
+
+      .blog-slider .slide {
+         flex: 0 0 calc(94% / 2);
+       }
+    
+      .blog-slider .slide-image::before {
+        top: 13.6rem;
+      }
+    
+      .footer-decoration {
+        width: 32rem;
+      }
+    }
+
+    @media (min-width: 1366px) {
+
+      h1 {
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 3.75rem;
+      }
+      
+      img.hero-img {
+        width: 100%;
+      }
+
+      .button-primary,
+      .button-secondary {
+        font-size: 1.5rem;
+      }
+
+      .hero-section::before {
+        height: 50rem;
+        top: 25rem;
+      }
+
+      #hero__title {
+        max-width: 32rem;
+      }
+      
+     .green-detail {
+        font-size: 3.75rem;
+      }
+
+      .hero__content {
+        text-align: left;
+        padding: 2rem 0rem 2rem 0;
+        width: 60%;
+      }
+
+      .hero__image-container {
+        width: 40%;
+      }
+      
+      .blog-slider .slide {
+          flex:0 0 calc(92% / 3);
+          box-sizing: border-box;
+        }
+       
+        .blog-slider .slide-image::before {
+            top: 11rem;
+        }
+    
+       .blog-section {
+            padding: 5rem 0;
+        }
+
+        .dot.active {
+          background: var(--main-color);
+        }
+    
+    
+        .blog-bg {
+          position: relative;
+          border-radius: 10px;
+          padding-top: 3rem;
+          background: transparent; 
+          overflow: visible; 
+        }
+        
+        .blog-bg::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 95%;
+          height: 520px; 
+          background-color: var(--main-color);
+          border-radius: 10px;
+          z-index: -1;
+        }
+
+    }
+    
+    @media (min-width: 1920px) {
+        .hero-section::before {
+        right: 18vh;
+            
+        }
+    }
